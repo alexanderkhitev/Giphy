@@ -42,8 +42,9 @@ struct GiphyScreenView: View {
         WaterfallGrid(viewModel.giphyItems) { giphyItem in
             row(giphyItem, spacing: spacing)
                 .id(giphyItem.id)
+                .tag(giphyItem.id)
         }
-        .gridStyle(columns: 2, spacing: spacing)
+        .gridStyle(columns: 2, spacing: spacing, animation: .none)
     }
 
     @ViewBuilder

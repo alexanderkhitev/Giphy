@@ -11,7 +11,13 @@ import SwiftUI
 struct GiphyItemRow: View {
 
     let giphyItem: GiphyItem
+    let placeholder: Color
     @State private var isVisible = false
+
+    init(giphyItem: GiphyItem) {
+        self.giphyItem = giphyItem
+        self.placeholder = Color(forUUID: giphyItem.id)
+    }
 
     var body: some View {
         content
@@ -29,13 +35,16 @@ struct GiphyItemRow: View {
             let url = URL(string: giphyItem.preview.url)
             KFAnimatedImage(url)
                 .configure { view in
-                    view.framePreloadCount = 1
+                    view.framePreloadCount = 0
+                    view.backgroundDecode = true
                 }
                 .placeholder { _ in
-                    Color(forUUID: giphyItem.id)
+                    placeholder
                 }
+                .cancelOnDisappear(true)
         } else {
-            Color.clear
+            placeholder
         }
     }
+
 }
