@@ -32,6 +32,7 @@
 		348FA8F829855E74001FE679 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F729855E74001FE679 /* Color.swift */; };
 		34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E340298560B0007F917C /* SizePreferenceKey.swift */; };
 		34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E342298560D2007F917C /* View+ReadSize.swift */; };
+		34C2E3622985A752007F917C /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 34C2E3612985A752007F917C /* WaterfallGrid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34C2E3622985A752007F917C /* WaterfallGrid in Frameworks */,
 				348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */,
 				348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */,
 			);
@@ -347,6 +349,7 @@
 			packageProductDependencies = (
 				348FA8D829854AC6001FE679 /* Kingfisher */,
 				348FA8DB29854ADE001FE679 /* Alamofire */,
+				34C2E3612985A752007F917C /* WaterfallGrid */,
 			);
 			productName = Giphy;
 			productReference = 348FA89D29854612001FE679 /* Giphy.app */;
@@ -379,6 +382,7 @@
 			packageReferences = (
 				348FA8D729854AC6001FE679 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				34C2E3602985A752007F917C /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
 			);
 			productRefGroup = 348FA89E29854612001FE679 /* Products */;
 			projectDirPath = "";
@@ -647,6 +651,14 @@
 				minimumVersion = 5.6.4;
 			};
 		};
+		34C2E3602985A752007F917C /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -659,6 +671,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		34C2E3612985A752007F917C /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34C2E3602985A752007F917C /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
