@@ -10,9 +10,9 @@ import SwiftUI
 struct OffsettableScrollView<T: View>: View {
     let axes: Axis.Set
     let showsIndicator: Bool
-    let onOffsetChanged: (CGPoint) -> Void
-    private var scrollDismissesKeyboardMode: Binding<ScrollDismissesKeyboardMode>
+    let mainScreenGeometryProxy: GeometryProxy
     let content: T
+    @State private var contentSize: CGSize = .zero
 
     private enum Const {
         static var scrollOffsetPreferenceName: String {
@@ -22,45 +22,47 @@ struct OffsettableScrollView<T: View>: View {
 
     init(axes: Axis.Set = .vertical,
          showsIndicator: Bool = true,
-         scrollDismissesKeyboardMode: Binding<ScrollDismissesKeyboardMode> = .constant(.automatic),
-         onOffsetChanged: @escaping (CGPoint) -> Void = { _ in },
+         mainScreenGeometryProxy: GeometryProxy,
          @ViewBuilder content: () -> T) {
         self.axes = axes
         self.showsIndicator = showsIndicator
-        self.scrollDismissesKeyboardMode = scrollDismissesKeyboardMode
-        self.onOffsetChanged = onOffsetChanged
+        self.mainScreenGeometryProxy = mainScreenGeometryProxy
         self.content = content()
     }
 
     var body: some View {
         ScrollView(axes, showsIndicators: showsIndicator) {
             VStack(spacing: 0) {
-                GeometryReader { proxy in
-                    Rectangle().preference(
-                        key: OffsetPreferenceKey.self,
-                        value: proxy.frame(in: .named(Const.scrollOffsetPreferenceName)).origin
-                    )
-                }
-                .frame(height: 0)
-                content
+                offsetDetectorView
+                contentView
             }
         }
         .coordinateSpace(name: Const.scrollOffsetPreferenceName)
         .onPreferenceChange(OffsetPreferenceKey.self,
-                            perform: onOffsetChanged)
-        .scrollDismissesKeyboard(scrollDismissesKeyboardMode.wrappedValue)
+                            perform: offsetChanged)
     }
 
-}
-
-struct OffsettableScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        OffsettableScrollView {
-            GeometryReader { proxy in
-                Text("Hello")
-                    .frame(width: proxy.size.width, height: 300)
-                    .background(.red)
-            }
+    private var offsetDetectorView: some View {
+        GeometryReader { proxy in
+            Rectangle().preference(
+                key: OffsetPreferenceKey.self,
+                value: proxy.frame(in: .named(Const.scrollOffsetPreferenceName)).origin
+            )
         }
+        .frame(height: 0)
+    }
+
+    private var contentView: some View {
+        content
+            .readSize { size in
+                contentSize = size
+                debugPrint("[a]: contentScroll size \(size)")
+            }
+    }
+
+    private func offsetChanged(_ offset: CGPoint) {
+        let value = (abs(offset.y) +  mainScreenGeometryProxy.size.height).rounded()
+        let isReachedBottom = value >= contentSize.height.rounded()
+        debugPrint("isReachedBottom \(isReachedBottom)")
     }
 }

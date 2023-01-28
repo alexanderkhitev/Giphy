@@ -24,18 +24,12 @@ struct GiphyScreenView: View {
     @ViewBuilder
     private var content: some View {
         GeometryReader { geoProxy in
-            contentScroll
-                .onAppear {
-                    contentGeoProxy = geoProxy
-                }
-        }
-    }
-
-    private var contentScroll: some View {
-        OffsettableScrollView(axes: .vertical) { offset in
-            debugPrint("[a] offset \(offset)")
-        } content: {
-            grid
+            OffsettableScrollView(axes: .vertical, mainScreenGeometryProxy: geoProxy) {
+                grid
+            }
+            .onAppear {
+                contentGeoProxy = geoProxy
+            }
         }
     }
 
