@@ -58,6 +58,7 @@ struct OffsettableScrollView<T: View>: View {
     private var contentView: some View {
         content
             .readSize { size in
+                debugPrint("[a]: scroll view readSize \(size)")
                 contentSize = size
             }
     }

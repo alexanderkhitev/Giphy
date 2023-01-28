@@ -24,8 +24,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
                      didFinishLaunchingWithOptions launchOptions:
                      [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // TODO: - Alex
-        KingfisherManager.shared.cache.memoryStorage.config.totalCostLimit = 200 * 1024 * 1024
-        KingfisherManager.shared.defaultOptions = [.memoryCacheExpiration(.seconds(1)), .memoryCacheAccessExtendingExpiration(.expirationTime(.seconds(1)))]
+//        KingfisherManager.shared.cache.memoryStorage.config.totalCostLimit = 200 * 1024 * 1024
+      
 
         return true
     }

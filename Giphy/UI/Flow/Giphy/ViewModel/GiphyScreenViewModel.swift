@@ -48,6 +48,7 @@ extension GiphyScreenViewModel {
         guard !waitPaginationData else { return }
         waitPaginationData = true
         Task {
+            // TODO: - Alex improve
             do {
                 let offset = giphyItems.count
                 let giphyData = try await giphyAPI.gifs(offset: offset)
