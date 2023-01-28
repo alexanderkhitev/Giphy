@@ -41,7 +41,6 @@ struct GiphyItemRow: View {
                 .placeholder { _ in
                     placeholder
                 }
-                .cancelOnDisappear(true)
         } else {
             placeholder
         }
