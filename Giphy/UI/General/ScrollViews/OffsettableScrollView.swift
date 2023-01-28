@@ -11,6 +11,7 @@ struct OffsettableScrollView<T: View>: View {
     let axes: Axis.Set
     let showsIndicator: Bool
     let mainScreenGeometryProxy: GeometryProxy
+    let reachedBottomHandler: (Bool) -> Void
     let content: T
     @State private var contentSize: CGSize = .zero
 
@@ -23,10 +24,12 @@ struct OffsettableScrollView<T: View>: View {
     init(axes: Axis.Set = .vertical,
          showsIndicator: Bool = true,
          mainScreenGeometryProxy: GeometryProxy,
+         reachedBottomHandler: @escaping (Bool) -> Void,
          @ViewBuilder content: () -> T) {
         self.axes = axes
         self.showsIndicator = showsIndicator
         self.mainScreenGeometryProxy = mainScreenGeometryProxy
+        self.reachedBottomHandler = reachedBottomHandler
         self.content = content()
     }
 
@@ -56,13 +59,13 @@ struct OffsettableScrollView<T: View>: View {
         content
             .readSize { size in
                 contentSize = size
-                debugPrint("[a]: contentScroll size \(size)")
             }
     }
 
     private func offsetChanged(_ offset: CGPoint) {
+        guard contentSize.height > 0 else { return }
         let value = (abs(offset.y) +  mainScreenGeometryProxy.size.height).rounded()
         let isReachedBottom = value >= contentSize.height.rounded()
-        debugPrint("isReachedBottom \(isReachedBottom)")
+        reachedBottomHandler(isReachedBottom)
     }
 }
