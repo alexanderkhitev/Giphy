@@ -26,7 +26,7 @@ struct GiphyScreenView: View {
         GeometryReader { geoProxy in
             contentScroll
                 .onAppear {
-                    self.contentGeoProxy = geoProxy
+                    contentGeoProxy = geoProxy
                 }
         }
     }
