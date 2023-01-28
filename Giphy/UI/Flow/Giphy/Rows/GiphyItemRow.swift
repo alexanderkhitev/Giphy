@@ -31,6 +31,9 @@ struct GiphyItemRow: View {
                 .configure { view in
                     view.framePreloadCount = 1
                 }
+                .placeholder { _ in
+                    Color(forUUID: giphyItem.id)
+                }
         } else {
             Color.clear
         }

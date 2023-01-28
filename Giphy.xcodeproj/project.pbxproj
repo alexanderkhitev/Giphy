@@ -30,6 +30,7 @@
 		348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */; };
 		348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */; };
 		348FA8F529854EA1001FE679 /* InvisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */; };
+		348FA8F829855E74001FE679 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F729855E74001FE679 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+VisibleAndInvisible.swift"; sourceTree = "<group>"; };
 		348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiblePreferenceKey.swift; sourceTree = "<group>"; };
 		348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisiblePreferenceKey.swift; sourceTree = "<group>"; };
+		348FA8F729855E74001FE679 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +266,7 @@
 		348FA8E129854BDB001FE679 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				348FA8F629855E70001FE679 /* Color */,
 				348FA8E229854BE6001FE679 /* View */,
 			);
 			path = SwiftUI;
@@ -311,6 +314,14 @@
 				348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */,
 			);
 			path = Rows;
+			sourceTree = "<group>";
+		};
+		348FA8F629855E70001FE679 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8F729855E74001FE679 /* Color.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -404,6 +415,7 @@
 				348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */,
 				348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */,
 				348FA8C3298547B7001FE679 /* GiphyRoute.swift in Sources */,
+				348FA8F829855E74001FE679 /* Color.swift in Sources */,
 				348FA8EF29854DCC001FE679 /* GiphyItemRow.swift in Sources */,
 				348FA8D629854A41001FE679 /* GiphyData.swift in Sources */,
 				348FA8B7298546D7001FE679 /* AppScreenView.swift in Sources */,
