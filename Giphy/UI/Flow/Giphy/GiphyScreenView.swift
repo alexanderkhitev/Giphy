@@ -26,7 +26,7 @@ struct GiphyScreenView: View {
         GeometryReader { geoProxy in
             OffsettableScrollView(axes: .vertical, mainScreenGeometryProxy: geoProxy) { isReachedBoottom in
                 guard isReachedBoottom else { return }
-                debugPrint("[a]: is reached bottom")
+                viewModel.loadPaginatonData()
             } content: {
                 grid
             }
