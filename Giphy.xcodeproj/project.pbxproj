@@ -33,6 +33,7 @@
 		34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E340298560B0007F917C /* SizePreferenceKey.swift */; };
 		34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E342298560D2007F917C /* View+ReadSize.swift */; };
 		34C2E3622985A752007F917C /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 34C2E3612985A752007F917C /* WaterfallGrid */; };
+		34C2E3652985A79D007F917C /* PinterestGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E3642985A79D007F917C /* PinterestGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		348FA8F729855E74001FE679 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		34C2E340298560B0007F917C /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		34C2E342298560D2007F917C /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
+		34C2E3642985A79D007F917C /* PinterestGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +291,7 @@
 		348FA8E629854CA3001FE679 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				34C2E3632985A791007F917C /* PinterestGrid */,
 				348FA8EA29854CE5001FE679 /* PreferenceKeys */,
 				348FA8E729854CAF001FE679 /* ScrollViews */,
 			);
@@ -328,6 +331,14 @@
 				348FA8F729855E74001FE679 /* Color.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		34C2E3632985A791007F917C /* PinterestGrid */ = {
+			isa = PBXGroup;
+			children = (
+				34C2E3642985A79D007F917C /* PinterestGrid.swift */,
+			);
+			path = PinterestGrid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +439,7 @@
 				348FA8D629854A41001FE679 /* GiphyData.swift in Sources */,
 				348FA8B7298546D7001FE679 /* AppScreenView.swift in Sources */,
 				348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */,
+				34C2E3652985A79D007F917C /* PinterestGrid.swift in Sources */,
 				348FA8A129854612001FE679 /* GiphyApp.swift in Sources */,
 				348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */,
 				348FA8B929854734001FE679 /* AppNavigationStack.swift in Sources */,
