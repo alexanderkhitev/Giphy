@@ -40,6 +40,10 @@ struct GiphyItem: Codable, Identifiable, Hashable {
     let analyticsResponsePayload: String
     let analytics: Analytics
 
+    var preview: The480_WStill {
+        images.downsized
+    }
+
     enum CodingKeys: String, CodingKey {
         case type, id, url, slug
         case bitlyGIFURL = "bitly_gif_url"

@@ -23,6 +23,13 @@
 		348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8D829854AC6001FE679 /* Kingfisher */; };
 		348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8DB29854ADE001FE679 /* Alamofire */; };
 		348FA8DF29854AFF001FE679 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8DE29854AFF001FE679 /* WaterfallGrid */; };
+		348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8E329854BF6001FE679 /* View+FirstAppear.swift */; };
+		348FA8E929854CB7001FE679 /* OffsettableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */; };
+		348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */; };
+		348FA8EF29854DCC001FE679 /* GiphyItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */; };
+		348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */; };
+		348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */; };
+		348FA8F529854EA1001FE679 /* InvisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		348FA8CF298549A5001FE679 /* GiphyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyInfo.swift; sourceTree = "<group>"; };
 		348FA8D1298549C6001FE679 /* GiphyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPI.swift; sourceTree = "<group>"; };
 		348FA8D529854A41001FE679 /* GiphyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyData.swift; sourceTree = "<group>"; };
+		348FA8E329854BF6001FE679 /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
+		348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsettableScrollView.swift; sourceTree = "<group>"; };
+		348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
+		348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyItemRow.swift; sourceTree = "<group>"; };
+		348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+VisibleAndInvisible.swift"; sourceTree = "<group>"; };
+		348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiblePreferenceKey.swift; sourceTree = "<group>"; };
+		348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisiblePreferenceKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 				348FA8D329854A33001FE679 /* Data */,
 				348FA8CD2985498A001FE679 /* Core */,
 				348FA8AF29854694001FE679 /* UI */,
+				348FA8E029854BD6001FE679 /* Extensions */,
 				348FA8B02985469E001FE679 /* Assets */,
 				348FA8A629854613001FE679 /* Preview Content */,
 			);
@@ -104,8 +119,8 @@
 		348FA8AF29854694001FE679 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				348FA8E629854CA3001FE679 /* General */,
 				348FA8B4298546C1001FE679 /* Navigation */,
-				348FA8B3298546B8001FE679 /* DesignSystem */,
 				348FA8B2298546B3001FE679 /* Flow */,
 			);
 			path = UI;
@@ -134,13 +149,6 @@
 				348FA8B5298546C9001FE679 /* Main */,
 			);
 			path = Flow;
-			sourceTree = "<group>";
-		};
-		348FA8B3298546B8001FE679 /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 		348FA8B4298546C1001FE679 /* Navigation */ = {
@@ -197,6 +205,7 @@
 		348FA8C6298547E1001FE679 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
+				348FA8ED29854DB6001FE679 /* Rows */,
 				348FA8C929854816001FE679 /* ViewModel */,
 				348FA8C7298547EC001FE679 /* GiphyScreenView.swift */,
 			);
@@ -242,6 +251,66 @@
 				348FA8D529854A41001FE679 /* GiphyData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		348FA8E029854BD6001FE679 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8E129854BDB001FE679 /* SwiftUI */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		348FA8E129854BDB001FE679 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8E229854BE6001FE679 /* View */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		348FA8E229854BE6001FE679 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8E329854BF6001FE679 /* View+FirstAppear.swift */,
+				348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		348FA8E629854CA3001FE679 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8EA29854CE5001FE679 /* PreferenceKeys */,
+				348FA8E729854CAF001FE679 /* ScrollViews */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		348FA8E729854CAF001FE679 /* ScrollViews */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */,
+			);
+			path = ScrollViews;
+			sourceTree = "<group>";
+		};
+		348FA8EA29854CE5001FE679 /* PreferenceKeys */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */,
+				348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */,
+				348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */,
+			);
+			path = PreferenceKeys;
+			sourceTree = "<group>";
+		};
+		348FA8ED29854DB6001FE679 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,12 +395,19 @@
 			files = (
 				348FA8C5298547CC001FE679 /* GiphyCoordinator.swift in Sources */,
 				348FA8C029854775001FE679 /* Coordinator.swift in Sources */,
+				348FA8E929854CB7001FE679 /* OffsettableScrollView.swift in Sources */,
 				348FA8CB2985482E001FE679 /* GiphyScreenViewModel.swift in Sources */,
+				348FA8F529854EA1001FE679 /* InvisiblePreferenceKey.swift in Sources */,
 				348FA8C8298547EC001FE679 /* GiphyScreenView.swift in Sources */,
+				348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */,
+				348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */,
+				348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */,
 				348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */,
 				348FA8C3298547B7001FE679 /* GiphyRoute.swift in Sources */,
+				348FA8EF29854DCC001FE679 /* GiphyItemRow.swift in Sources */,
 				348FA8D629854A41001FE679 /* GiphyData.swift in Sources */,
 				348FA8B7298546D7001FE679 /* AppScreenView.swift in Sources */,
+				348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */,
 				348FA8A129854612001FE679 /* GiphyApp.swift in Sources */,
 				348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */,
 				348FA8B929854734001FE679 /* AppNavigationStack.swift in Sources */,

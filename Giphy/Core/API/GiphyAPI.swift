@@ -15,7 +15,7 @@ class GiphyAPI {
         guard let url = URL(string: "https://api.giphy.com/v1/gifs/trending") else {
             throw NSError()
         }
-        var parameters: Parameters = ["api_key": GiphyInfo.Key.appKey,
+        let parameters: Parameters = ["api_key": GiphyInfo.Key.appKey,
                                       "limit": 50,
                                       "offset": offset,
                                       "rating": Rating.g.rawValue]
