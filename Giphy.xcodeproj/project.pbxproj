@@ -17,6 +17,12 @@
 		348FA8C5298547CC001FE679 /* GiphyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8C4298547CC001FE679 /* GiphyCoordinator.swift */; };
 		348FA8C8298547EC001FE679 /* GiphyScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8C7298547EC001FE679 /* GiphyScreenView.swift */; };
 		348FA8CB2985482E001FE679 /* GiphyScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8CA2985482E001FE679 /* GiphyScreenViewModel.swift */; };
+		348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8CF298549A5001FE679 /* GiphyInfo.swift */; };
+		348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8D1298549C6001FE679 /* GiphyAPI.swift */; };
+		348FA8D629854A41001FE679 /* GiphyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8D529854A41001FE679 /* GiphyData.swift */; };
+		348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8D829854AC6001FE679 /* Kingfisher */; };
+		348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8DB29854ADE001FE679 /* Alamofire */; };
+		348FA8DF29854AFF001FE679 /* WaterfallGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8DE29854AFF001FE679 /* WaterfallGrid */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,9 @@
 		348FA8C4298547CC001FE679 /* GiphyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyCoordinator.swift; sourceTree = "<group>"; };
 		348FA8C7298547EC001FE679 /* GiphyScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyScreenView.swift; sourceTree = "<group>"; };
 		348FA8CA2985482E001FE679 /* GiphyScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyScreenViewModel.swift; sourceTree = "<group>"; };
+		348FA8CF298549A5001FE679 /* GiphyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyInfo.swift; sourceTree = "<group>"; };
+		348FA8D1298549C6001FE679 /* GiphyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPI.swift; sourceTree = "<group>"; };
+		348FA8D529854A41001FE679 /* GiphyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +47,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348FA8DF29854AFF001FE679 /* WaterfallGrid in Frameworks */,
+				348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */,
+				348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				348FA8AE29854689001FE679 /* App */,
+				348FA8D329854A33001FE679 /* Data */,
+				348FA8CD2985498A001FE679 /* Core */,
 				348FA8AF29854694001FE679 /* UI */,
 				348FA8B02985469E001FE679 /* Assets */,
 				348FA8A629854613001FE679 /* Preview Content */,
@@ -197,6 +211,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		348FA8CD2985498A001FE679 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8CE29854993001FE679 /* API */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		348FA8CE29854993001FE679 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8CF298549A5001FE679 /* GiphyInfo.swift */,
+				348FA8D1298549C6001FE679 /* GiphyAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		348FA8D329854A33001FE679 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8D429854A3A001FE679 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		348FA8D429854A3A001FE679 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				348FA8D529854A41001FE679 /* GiphyData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -213,6 +260,11 @@
 			dependencies = (
 			);
 			name = Giphy;
+			packageProductDependencies = (
+				348FA8D829854AC6001FE679 /* Kingfisher */,
+				348FA8DB29854ADE001FE679 /* Alamofire */,
+				348FA8DE29854AFF001FE679 /* WaterfallGrid */,
+			);
 			productName = Giphy;
 			productReference = 348FA89D29854612001FE679 /* Giphy.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +293,11 @@
 				Base,
 			);
 			mainGroup = 348FA89429854612001FE679;
+			packageReferences = (
+				348FA8D729854AC6001FE679 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				348FA8DD29854AFE001FE679 /* XCRemoteSwiftPackageReference "WaterfallGrid" */,
+			);
 			productRefGroup = 348FA89E29854612001FE679 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,9 +328,12 @@
 				348FA8C029854775001FE679 /* Coordinator.swift in Sources */,
 				348FA8CB2985482E001FE679 /* GiphyScreenViewModel.swift in Sources */,
 				348FA8C8298547EC001FE679 /* GiphyScreenView.swift in Sources */,
+				348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */,
 				348FA8C3298547B7001FE679 /* GiphyRoute.swift in Sources */,
+				348FA8D629854A41001FE679 /* GiphyData.swift in Sources */,
 				348FA8B7298546D7001FE679 /* AppScreenView.swift in Sources */,
 				348FA8A129854612001FE679 /* GiphyApp.swift in Sources */,
+				348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */,
 				348FA8B929854734001FE679 /* AppNavigationStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +537,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		348FA8D729854AC6001FE679 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 7.5.0;
+			};
+		};
+		348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+		348FA8DD29854AFE001FE679 /* XCRemoteSwiftPackageReference "WaterfallGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paololeonardi/WaterfallGrid";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		348FA8D829854AC6001FE679 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348FA8D729854AC6001FE679 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		348FA8DB29854ADE001FE679 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		348FA8DE29854AFF001FE679 /* WaterfallGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 348FA8DD29854AFE001FE679 /* XCRemoteSwiftPackageReference "WaterfallGrid" */;
+			productName = WaterfallGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 348FA89529854612001FE679 /* Project object */;
 }
