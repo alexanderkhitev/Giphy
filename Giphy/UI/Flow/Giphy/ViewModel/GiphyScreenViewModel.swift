@@ -11,7 +11,7 @@ import SwiftUI
 class GiphyScreenViewModel: ObservableObject {
     // Data
     var giphyItems = [GiphyItem]()
-    @Published var columns = [PinterestGrid.Column]()
+    @Published var columns = [WaterfallGridColumn]()
     private var waitPaginationData = false
     // managers and etc
     private let giphyAPI: GiphyAPI
@@ -76,11 +76,11 @@ extension GiphyScreenViewModel {
         }
     }
 
-    private func columns(_ gridItems: [GiphyItem], numOfColumns: Int = 2) -> [PinterestGrid.Column] {
-        var columns = [PinterestGrid.Column]()
+    private func columns(_ gridItems: [GiphyItem], numOfColumns: Int = 2) -> [WaterfallGridColumn] {
+        var columns = [WaterfallGridColumn]()
 
         for _ in 0..<numOfColumns {
-            columns.append(PinterestGrid.Column())
+            columns.append(WaterfallGridColumn())
         }
 
         // this stores the current height of each column, sot that we can find out which one is the smallest
@@ -101,7 +101,7 @@ extension GiphyScreenViewModel {
         return columns
     }
 
-    private func columns(columns: [PinterestGrid.Column], gridItems: [GiphyItem], numOfColumns: Int = 2) -> [PinterestGrid.Column] {
+    private func columns(columns: [WaterfallGridColumn], gridItems: [GiphyItem], numOfColumns: Int = 2) -> [WaterfallGridColumn] {
         var columns = columns
 
         // this stores the current height of each column, sot that we can find out which one is the smallest

@@ -40,7 +40,7 @@ struct GiphyScreenView: View {
     @ViewBuilder
     private var grid: some View {
         let spacing: CGFloat = 8
-        PinterestGrid(columns: viewModel.columns, numOfColumns: 2, spacing: spacing)
+        WaterfallGrid(columns: viewModel.columns, numOfColumns: 2, spacing: spacing)
     }
 
 }

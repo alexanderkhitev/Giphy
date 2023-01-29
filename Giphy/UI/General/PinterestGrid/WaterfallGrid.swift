@@ -1,5 +1,5 @@
 //
-//  PinterestGrid.swift
+//  WaterfallGrid.swift
 //  Giphy
 //
 //  Created by Alexander Khitev on 1/28/23.
@@ -11,19 +11,19 @@ protocol PrinterestGridItemProtocol: Identifiable {
     var rowSize: CGSize { get set }
 }
 
-struct PinterestGrid: View {
+struct WaterfallGridColumn: Identifiable {
+    let id = UUID()
+    var gridItems = [GiphyItem]()
+    var columnHeihgt: CGFloat = 0
+}
 
-    class Column: ObservableObject, Identifiable {
-        let id = UUID()
-        @Published var gridItems = [GiphyItem]()
-        var columnHeihgt: CGFloat = 0
-    }
+struct WaterfallGrid: View {
 
-    let columns: [Column]
+    let columns: [WaterfallGridColumn]
 
     @State var spacing: CGFloat
 
-    init(columns: [Column], numOfColumns: Int, spacing: CGFloat) {
+    init(columns: [WaterfallGridColumn], numOfColumns: Int, spacing: CGFloat) {
         self.spacing = spacing
         self.columns = columns
     }
