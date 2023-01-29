@@ -41,6 +41,7 @@ struct GiphyItemRow: View {
                 .placeholder { _ in
                     placeholder
                 }
+
         } else {
             placeholder
         }

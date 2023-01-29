@@ -31,6 +31,7 @@ struct GiphyScreenView: View {
                 grid
             }
             .onAppear {
+                viewModel.mainScreenGeoProxy = geoProxy
                 contentGeoProxy = geoProxy
             }
         }
@@ -39,34 +40,16 @@ struct GiphyScreenView: View {
     @ViewBuilder
     private var grid: some View {
         let spacing: CGFloat = 8
-        WaterfallGrid(viewModel.giphyItems) { giphyItem in
-            row(giphyItem, spacing: spacing)
-                .id(giphyItem.id)
-                .tag(giphyItem.id)
-        }
-        .gridStyle(columns: 2, spacing: spacing, animation: .none)
+        PinterestGrid(columns: viewModel.columns, numOfColumns: 2, spacing: spacing)
+//        PinterestGrid(gridItems: viewModel.giphyItems, numOfColumns: 2, spacing: spacing)
     }
 
     @ViewBuilder
     private func row(_ giphyItem: GiphyItem, spacing: CGFloat) -> some View {
-        let size = calculateRowSize(giphyItem, spacing: spacing)
         GiphyItemRow(giphyItem: giphyItem)
-            .frame(width: size.width, height: size.height)
     }
 
-    private func calculateRowSize(_ giphyItem: GiphyItem, spacing: CGFloat) -> CGSize {
-        let screenSize = contentGeoProxy?.size ?? .zero
-        let rowWidth = (screenSize.width - spacing) / 2
 
-        let width = CGFloat(Int(giphyItem.images.preview.width) ?? 0)
-        let height = CGFloat(Int(giphyItem.images.preview.height) ?? 0)
-
-        let multipler = height / width
-
-        let rowHeight = rowWidth * multipler
-
-        return CGSize(width: rowWidth, height: rowHeight)
-    }
 
 }
 

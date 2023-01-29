@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
 
 class GiphyScreenViewModel: ObservableObject {
     // Data
-    @Published var giphyData: GiphyData?
-    @Published var giphyItems = [GiphyItem]()
+    var giphyItems = [GiphyItem]()
+    @Published var columns = [PinterestGrid.Column]()
     private var waitPaginationData = false
     // managers and etc
     private let giphyAPI: GiphyAPI
     private weak var coordinator: GiphyCoordinator?
+    var mainScreenGeoProxy: GeometryProxy?
 
     init(giphyAPI: GiphyAPI = .init(), coordinator: GiphyCoordinator?) {
         self.giphyAPI = giphyAPI
@@ -31,9 +33,11 @@ extension GiphyScreenViewModel {
     func loadData() {
         Task {
             do {
-                let giphyData = try await giphyAPI.gifs()
-                self.giphyData = giphyData
-                giphyItems = giphyData.data
+                let giphyItems = try await giphyAPI.gifs().data
+                giphyItems.forEach({ $0.rowSize = calculateRowSize($0, spacing: 8) })
+
+                self.giphyItems = giphyItems
+                columns = columns(giphyItems)
 
                 waitPaginationData = false
             } catch {
@@ -51,24 +55,122 @@ extension GiphyScreenViewModel {
             // TODO: - Alex improve
             do {
                 let offset = giphyItems.count
-                let giphyData = try await giphyAPI.gifs(offset: offset)
+                let newGiphyItems = try await giphyAPI.gifs(offset: offset).data
+                newGiphyItems.forEach({ $0.rowSize = calculateRowSize($0, spacing: 8) })
 
-                let currentGiphyItems = giphyItems
-
-                var newGiphyItems = [GiphyItem]()
-                for giphyItem in giphyData.data {
-                    if !currentGiphyItems.contains(where: { $0.id == giphyItem.id }) {
-                        newGiphyItems.append(giphyItem)
+                var correctedGiphyItems = [GiphyItem]()
+                for newGiphyItem in newGiphyItems {
+                    if !giphyItems.contains(where: { $0.id == newGiphyItem.id }) {
+                        correctedGiphyItems.append(newGiphyItem)
                     }
                 }
 
-                giphyItems.append(contentsOf: newGiphyItems)
+                giphyItems += correctedGiphyItems
+
+                columns = columns(columns: columns, gridItems: giphyItems)
+
 
                 waitPaginationData = false
             } catch {
-                waitPaginationData = false
+                // TODO: - Show error
                 debugPrint("[a]: error \(error.localizedDescription)")
             }
         }
+    }
+
+    private func columns(_ gridItems: [GiphyItem], numOfColumns: Int = 2) -> [PinterestGrid.Column] {
+        var columns = [PinterestGrid.Column]()
+
+        for _ in 0..<numOfColumns {
+            columns.append(PinterestGrid.Column())
+        }
+
+        // this stores the current height of each column, sot that we can find out which one is the smallest
+        var columnsHeight = Array<CGFloat>(repeating: 0, count: numOfColumns)
+
+        for gridItem in gridItems {
+            var smallestHeight = columnsHeight.min() ?? 0
+            var smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
+            debugPrint("[a]: smallestHeight \(smallestColumnIndex)")
+
+            let smallestColumn = columnsHeight[smallestColumnIndex]
+
+//            for heightItem in columnsHeight.enumerated() {
+//                let currentHeight = heightItem.element
+//                if currentHeight <= smallestHeight {
+//                    smallestHeight = currentHeight
+//                    smallestColumnIndex = heightItem.offset
+//                }
+//            }
+//            for i in 1..<columnsHeight.count {
+//                let currentHeight = columnsHeight[i]
+//                if currentHeight < smallestHeight {
+//                    smallestHeight = currentHeight
+//                    smallestColumnIndex = i
+//                }
+//            }
+
+            columns[smallestColumnIndex].gridItems.append(gridItem)
+            columns[smallestColumnIndex].columnHeihgt += gridItem.rowSize.height
+            columnsHeight[smallestColumnIndex] += gridItem.rowSize.height
+        }
+        debugPrint("[a]: columnsHeight \(columnsHeight)")
+        return columns
+    }
+
+    private func columns(columns: [PinterestGrid.Column], gridItems: [GiphyItem], numOfColumns: Int = 2) -> [PinterestGrid.Column] {
+        var columns = columns
+
+        // this stores the current height of each column, sot that we can find out which one is the smallest
+        var columnsHeight = columns.compactMap({ $0.columnHeihgt })
+
+        for gridItem in gridItems {
+            var smallestHeight = columnsHeight.min() ?? 0
+            var smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
+            debugPrint("[a]: smallestHeight \(smallestColumnIndex)")
+
+            let smallestColumn = columnsHeight[smallestColumnIndex]
+
+//            for heightItem in columnsHeight.enumerated() {
+//                let currentHeight = heightItem.element
+//                if currentHeight <= smallestHeight {
+//                    smallestHeight = currentHeight
+//                    smallestColumnIndex = heightItem.offset
+//                }
+//            }
+//            for i in 1..<columnsHeight.count {
+//                let currentHeight = columnsHeight[i]
+//                if currentHeight < smallestHeight {
+//                    smallestHeight = currentHeight
+//                    smallestColumnIndex = i
+//                }
+//            }
+
+            columns[smallestColumnIndex].gridItems.append(gridItem)
+            columnsHeight[smallestColumnIndex] += gridItem.rowSize.height
+        }
+        debugPrint("[a]: columnsHeight \(columnsHeight)")
+        return columns
+    }
+}
+
+// MARK: - UI Helper functions
+
+extension GiphyScreenViewModel {
+    private func calculateRowSize(_ giphyItem: GiphyItem, spacing: CGFloat) -> CGSize {
+        let screenSize = mainScreenGeoProxy?.size ?? .zero
+        debugPrint("[a], screenSize: \(screenSize)")
+        let rowWidth = (screenSize.width - spacing) / 2
+
+        let width = CGFloat(Int(giphyItem.preview.width) ?? 0)
+        let height = CGFloat(Int(giphyItem.preview.height) ?? 0)
+
+        let multipler = height / width
+
+        let rowHeight = rowWidth * multipler
+
+        let rowSize = CGSize(width: rowWidth, height: rowHeight)
+        debugPrint("[a]: rowSize \(rowSize)")
+        return rowSize
     }
 }

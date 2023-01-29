@@ -20,7 +20,7 @@ struct GiphyData: Codable {
 }
 
 // MARK: - Datum
-struct GiphyItem: Codable, Identifiable, Hashable {
+class GiphyItem: Codable, Identifiable, Hashable, PrinterestGridItemProtocol {
     let type: GiphyItemType
     let id: String
     let url: String
@@ -84,6 +84,8 @@ struct GiphyItem: Codable, Identifiable, Hashable {
         self.analyticsResponsePayload = analyticsResponsePayload
         self.analytics = analytics
     }
+
+    var rowSize: CGSize = .zero
 }
 
 extension GiphyItem: Equatable {
