@@ -11,11 +11,6 @@ struct GiphyScreenView: View {
     @StateObject var viewModel: GiphyScreenViewModel
     @State private var contentGeoProxy: GeometryProxy?
 
-    enum Parameters {
-        static let spacing: CGFloat = 8
-        static let columnsNumber = 2
-    }
-
     var body: some View {
         content
             .navigationTitle("Giphy")
@@ -43,7 +38,7 @@ struct GiphyScreenView: View {
 
     @ViewBuilder
     private var grid: some View {
-        GiphyWaterfallGrid(viewModel: viewModel, spacing: Parameters.spacing)
+        GiphyWaterfallGrid(viewModel: viewModel)
     }
 
 }

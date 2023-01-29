@@ -11,6 +11,7 @@ import SwiftUI
 class GiphyScreenViewModel: ObservableObject {
     // Data
     @Published var columns = [GiphyWaterfallGridColumn]()
+    @Published var uiData = GiphyScreenViewUIData()
     private var waitPaginationData = false
     // managers and etc
     private let giphyAPI: GiphyAPI
@@ -61,13 +62,13 @@ extension GiphyScreenViewModel {
         }
     }
 
-    private func createColumns(for gridItems: [GiphyItem], numOfColumns: Int = 2) {
+    private func createColumns(for gridItems: [GiphyItem]) {
         var columns = [GiphyWaterfallGridColumn]()
-        for _ in 0..<numOfColumns {
+        for _ in 0..<uiData.columnsNumber {
             columns.append(GiphyWaterfallGridColumn())
         }
         for gridItem in gridItems {
-            gridItem.rowSize = calculateRowSize(gridItem, spacing: 8)
+            gridItem.rowSize = calculateRowSize(gridItem, spacing: uiData.itemSpacing)
 
             let smallestColumn = columns.min(by: { $0.columnHeight < $1.columnHeight }) ?? columns[0]
             smallestColumn.gridItems.append(gridItem)
