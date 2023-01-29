@@ -10,12 +10,13 @@ import SwiftUI
 
 class GiphyScreenViewModel: ObservableObject {
     // Data
-    @Published var columns = [WaterfallGridColumn]()
+    @Published var columns = [GiphyWaterfallGridColumn]()
     private var waitPaginationData = false
     // managers and etc
     private let giphyAPI: GiphyAPI
     private weak var coordinator: GiphyCoordinator?
     var mainScreenGeoProxy: GeometryProxy?
+    
 
     init(giphyAPI: GiphyAPI = .init(), coordinator: GiphyCoordinator?) {
         self.giphyAPI = giphyAPI
@@ -53,20 +54,17 @@ extension GiphyScreenViewModel {
 
                 updateColumns(with: newGiphyItems)
 
-                debugPrint("height!! first column \(columns[0].columnHeight), second \(columns[1].columnHeight)")
-
                 waitPaginationData = false
             } catch {
                 // TODO: - Show error
-                debugPrint("[a]: error \(error.localizedDescription)")
             }
         }
     }
 
     private func createColumns(for gridItems: [GiphyItem], numOfColumns: Int = 2) {
-        var columns = [WaterfallGridColumn]()
+        var columns = [GiphyWaterfallGridColumn]()
         for _ in 0..<numOfColumns {
-            columns.append(WaterfallGridColumn())
+            columns.append(GiphyWaterfallGridColumn())
         }
         for gridItem in gridItems {
             gridItem.rowSize = calculateRowSize(gridItem, spacing: 8)

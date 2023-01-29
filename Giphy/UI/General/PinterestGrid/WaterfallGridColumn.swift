@@ -1,5 +1,5 @@
 //
-//  WaterfallGridColumn.swift
+//  GiphyWaterfallGrid.swift
 //  Giphy
 //
 //  Created by Alexander Khitev on 1/29/23.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-class WaterfallGridColumn: ObservableObject, Identifiable {
+class GiphyWaterfallGridColumn: ObservableObject, Identifiable {
     let id = UUID()
     @Published var gridItems = [GiphyItem]()
     var columnHeight: CGFloat = 0
 }
 
-extension WaterfallGridColumn: Equatable {
-    static func == (lhs: WaterfallGridColumn, rhs: WaterfallGridColumn) -> Bool {
+extension GiphyWaterfallGridColumn: Equatable {
+    static func == (lhs: GiphyWaterfallGridColumn, rhs: GiphyWaterfallGridColumn) -> Bool {
         lhs.id == rhs.id
     }
 }

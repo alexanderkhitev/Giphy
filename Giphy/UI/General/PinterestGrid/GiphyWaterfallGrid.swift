@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct GiphyWaterfallGrid: View {
-
     @ObservedObject var viewModel: GiphyScreenViewModel
-
     @State var spacing: CGFloat
 
     var body: some View {
@@ -20,7 +18,6 @@ struct GiphyWaterfallGrid: View {
                     ForEach(column.gridItems, id: \.rowID) { gridItem in
                         GiphyItemRow(giphyItem: gridItem)
                             .frame(width: gridItem.rowSize.width, height: gridItem.rowSize.height)
-                            .id(gridItem.rowID)
                     }
                 }
             }
