@@ -15,8 +15,8 @@ struct GiphyDetailedScreenView: View {
     }
 }
 
-//struct GiphyDetailedScreenView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GiphyDetailedScreenView(.init(giphyItem: GiphyItem))
-//    }
-//}
+struct GiphyDetailedScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        GiphyDetailedScreenView(viewModel: .init(giphyItem: Mock.giphyItem()!, coordinator: nil))
+    }
+}
