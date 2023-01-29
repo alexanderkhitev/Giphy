@@ -47,7 +47,7 @@ extension GiphyScreenViewModel {
         guard !waitPaginationData else { return }
         waitPaginationData = true
         Task {
-            // TODO: - Alex improve
+            // TODO: - improve
             do {
                 let offset = columns.compactMap({ $0.gridItems.count }).reduce(.zero, +)
                 let newGiphyItems = try await giphyAPI.gifs(offset: offset).data
@@ -61,7 +61,7 @@ extension GiphyScreenViewModel {
         }
     }
 
-    // TODO: - alex
+    // TODO: - improve
 
     private func createColumns(for gridItems: [GiphyItem]) {
         var columns = [GiphyWaterfallGridColumn]()
