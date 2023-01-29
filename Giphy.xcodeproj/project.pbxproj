@@ -51,13 +51,13 @@
 		348FA8E929854CB7001FE679 /* OffsettableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */; };
 		348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */; };
 		348FA8EF29854DCC001FE679 /* GiphyItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */; };
-		348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */; };
 		348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */; };
 		348FA8F529854EA1001FE679 /* InvisiblePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */; };
 		348FA8F829855E74001FE679 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F729855E74001FE679 /* Color.swift */; };
 		34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E340298560B0007F917C /* SizePreferenceKey.swift */; };
 		34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E342298560D2007F917C /* View+ReadSize.swift */; };
 		34C2E3652985A79D007F917C /* GiphyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E3642985A79D007F917C /* GiphyWaterfallGrid.swift */; };
+		34CBE7662986DE08008C649C /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 34CBE7652986DE08008C649C /* ProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +104,6 @@
 		348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsettableScrollView.swift; sourceTree = "<group>"; };
 		348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
 		348FA8EE29854DCC001FE679 /* GiphyItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyItemRow.swift; sourceTree = "<group>"; };
-		348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+VisibleAndInvisible.swift"; sourceTree = "<group>"; };
 		348FA8F229854E4F001FE679 /* VisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisiblePreferenceKey.swift; sourceTree = "<group>"; };
 		348FA8F429854EA1001FE679 /* InvisiblePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisiblePreferenceKey.swift; sourceTree = "<group>"; };
 		348FA8F729855E74001FE679 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CBE7662986DE08008C649C /* ProgressHUD in Frameworks */,
 				348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */,
 				348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */,
 			);
@@ -450,7 +450,6 @@
 			isa = PBXGroup;
 			children = (
 				348FA8E329854BF6001FE679 /* View+FirstAppear.swift */,
-				348FA8F029854E0B001FE679 /* View+VisibleAndInvisible.swift */,
 				34C2E342298560D2007F917C /* View+ReadSize.swift */,
 			);
 			path = View;
@@ -529,6 +528,7 @@
 			packageProductDependencies = (
 				348FA8D829854AC6001FE679 /* Kingfisher */,
 				348FA8DB29854ADE001FE679 /* Alamofire */,
+				34CBE7652986DE08008C649C /* ProgressHUD */,
 			);
 			productName = Giphy;
 			productReference = 348FA89D29854612001FE679 /* Giphy.app */;
@@ -561,6 +561,7 @@
 			packageReferences = (
 				348FA8D729854AC6001FE679 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				34CBE7642986DE08008C649C /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 			);
 			productRefGroup = 348FA89E29854612001FE679 /* Products */;
 			projectDirPath = "";
@@ -605,7 +606,6 @@
 				347663DE29866A6100DE5BE4 /* User.swift in Sources */,
 				347663C82986689100DE5BE4 /* Array.swift in Sources */,
 				347664032986AD8700DE5BE4 /* CopySystemwideManager.swift in Sources */,
-				348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */,
 				347664002986ABDB00DE5BE4 /* JSONDecoder.swift in Sources */,
 				348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */,
 				347663DB29866A6100DE5BE4 /* Meta.swift in Sources */,
@@ -865,6 +865,14 @@
 				minimumVersion = 5.6.4;
 			};
 		};
+		34CBE7642986DE08008C649C /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 13.6.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -877,6 +885,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 348FA8DA29854ADE001FE679 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		34CBE7652986DE08008C649C /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34CBE7642986DE08008C649C /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

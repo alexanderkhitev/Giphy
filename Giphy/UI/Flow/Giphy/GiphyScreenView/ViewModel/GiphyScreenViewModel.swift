@@ -37,8 +37,7 @@ extension GiphyScreenViewModel {
                 createColumns(for: giphyItems)
                 waitPaginationData = false
             } catch {
-                // TODO: - Show error
-                debugPrint("[a]: error \(error.localizedDescription)")
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
         }
     }
@@ -57,7 +56,7 @@ extension GiphyScreenViewModel {
 
                 waitPaginationData = false
             } catch {
-                // TODO: - Show error
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
         }
     }

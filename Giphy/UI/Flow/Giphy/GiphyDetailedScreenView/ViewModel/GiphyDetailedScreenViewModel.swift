@@ -45,9 +45,9 @@ extension GiphyDetailedScreenViewModel {
         Task {
             do {
                 try await photoManager.saveImage(from: sourceURL)
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
             } catch {
-                // show error
-                debugPrint("\(#function), \(error)")
+                UINotificationFeedbackGenerator().notificationOccurred(.error)
             }
         }
     }
