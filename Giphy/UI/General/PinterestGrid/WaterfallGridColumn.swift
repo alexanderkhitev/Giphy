@@ -9,6 +9,6 @@ import Foundation
 
 class WaterfallGridColumn: ObservableObject, Identifiable {
     let id = UUID()
-    var gridItems = [GiphyItem]()
+    @Published var gridItems = [GiphyItem]()
     var columnHeihgt: CGFloat = 0
 }
