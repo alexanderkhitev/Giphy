@@ -5,7 +5,6 @@
 //  Created by Alexander Khitev on 1/28/23.
 //
 
-import WaterfallGrid
 import SwiftUI
 
 struct GiphyScreenView: View {

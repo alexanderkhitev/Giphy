@@ -26,7 +26,7 @@ class GiphyItem: Codable, PrinterestGridItemProtocol {
     var analyticsResponsePayload: String
     var analytics: Analytics
 
-    // internal
+    // TODO: - Alex
     var rowSize: CGSize = .zero
     let rowID = UUID()
     var preview: The480_WStill {

@@ -40,7 +40,6 @@ struct GiphyItemRow: View {
             .placeholder { _ in
                 placeholder
             }
-            .background(placeholder)
     }
 
 }
