@@ -66,9 +66,7 @@ extension GiphyScreenViewModel {
                 }
 
                 giphyItems += correctedGiphyItems
-
-                columns = columns(columns: columns, gridItems: giphyItems)
-
+                columns = columns(columns: columns, gridItems: correctedGiphyItems)
 
                 waitPaginationData = false
             } catch {
@@ -89,26 +87,11 @@ extension GiphyScreenViewModel {
         var columnsHeight = Array<CGFloat>(repeating: 0, count: numOfColumns)
 
         for gridItem in gridItems {
-            var smallestHeight = columnsHeight.min() ?? 0
-            var smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
-            debugPrint("[a]: smallestHeight \(smallestColumnIndex)")
+            let smallestHeight = columnsHeight.min() ?? 0
+            let smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
 
             let smallestColumn = columnsHeight[smallestColumnIndex]
 
-//            for heightItem in columnsHeight.enumerated() {
-//                let currentHeight = heightItem.element
-//                if currentHeight <= smallestHeight {
-//                    smallestHeight = currentHeight
-//                    smallestColumnIndex = heightItem.offset
-//                }
-//            }
-//            for i in 1..<columnsHeight.count {
-//                let currentHeight = columnsHeight[i]
-//                if currentHeight < smallestHeight {
-//                    smallestHeight = currentHeight
-//                    smallestColumnIndex = i
-//                }
-//            }
 
             columns[smallestColumnIndex].gridItems.append(gridItem)
             columns[smallestColumnIndex].columnHeihgt += gridItem.rowSize.height
@@ -127,7 +110,6 @@ extension GiphyScreenViewModel {
         for gridItem in gridItems {
             var smallestHeight = columnsHeight.min() ?? 0
             var smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
-            debugPrint("[a]: smallestHeight \(smallestColumnIndex)")
 
             let smallestColumn = columnsHeight[smallestColumnIndex]
 
@@ -149,7 +131,6 @@ extension GiphyScreenViewModel {
             columns[smallestColumnIndex].gridItems.append(gridItem)
             columnsHeight[smallestColumnIndex] += gridItem.rowSize.height
         }
-        debugPrint("[a]: columnsHeight \(columnsHeight)")
         return columns
     }
 }
@@ -159,7 +140,6 @@ extension GiphyScreenViewModel {
 extension GiphyScreenViewModel {
     private func calculateRowSize(_ giphyItem: GiphyItem, spacing: CGFloat) -> CGSize {
         let screenSize = mainScreenGeoProxy?.size ?? .zero
-        debugPrint("[a], screenSize: \(screenSize)")
         let rowWidth = (screenSize.width - spacing) / 2
 
         let width = CGFloat(Int(giphyItem.preview.width) ?? 0)
@@ -170,7 +150,6 @@ extension GiphyScreenViewModel {
         let rowHeight = rowWidth * multipler
 
         let rowSize = CGSize(width: rowWidth, height: rowHeight)
-        debugPrint("[a]: rowSize \(rowSize)")
         return rowSize
     }
 }

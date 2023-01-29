@@ -15,7 +15,7 @@ struct GiphyScreenView: View {
     var body: some View {
         content
             .navigationTitle("Giphy")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
             .onFirstAppear {
                 viewModel.loadData()
             }
@@ -41,15 +41,7 @@ struct GiphyScreenView: View {
     private var grid: some View {
         let spacing: CGFloat = 8
         PinterestGrid(columns: viewModel.columns, numOfColumns: 2, spacing: spacing)
-//        PinterestGrid(gridItems: viewModel.giphyItems, numOfColumns: 2, spacing: spacing)
     }
-
-    @ViewBuilder
-    private func row(_ giphyItem: GiphyItem, spacing: CGFloat) -> some View {
-        GiphyItemRow(giphyItem: giphyItem)
-    }
-
-
 
 }
 

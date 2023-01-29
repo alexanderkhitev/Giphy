@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		347663C82986689100DE5BE4 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663C72986689100DE5BE4 /* Array.swift */; };
+		347663D829866A6100DE5BE4 /* Onclick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663C929866A6000DE5BE4 /* Onclick.swift */; };
+		347663D929866A6100DE5BE4 /* Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CA29866A6000DE5BE4 /* Analytics.swift */; };
+		347663DA29866A6100DE5BE4 /* GiphyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CB29866A6000DE5BE4 /* GiphyItem.swift */; };
+		347663DB29866A6100DE5BE4 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CC29866A6000DE5BE4 /* Meta.swift */; };
+		347663DC29866A6100DE5BE4 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CD29866A6100DE5BE4 /* TypeEnum.swift */; };
+		347663DD29866A6100DE5BE4 /* FixedHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CE29866A6100DE5BE4 /* FixedHeight.swift */; };
+		347663DE29866A6100DE5BE4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663CF29866A6100DE5BE4 /* User.swift */; };
+		347663DF29866A6100DE5BE4 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D029866A6100DE5BE4 /* Images.swift */; };
+		347663E029866A6100DE5BE4 /* JSONSchemaSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D129866A6100DE5BE4 /* JSONSchemaSupport.swift */; };
+		347663E129866A6100DE5BE4 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D229866A6100DE5BE4 /* Pagination.swift */; };
+		347663E229866A6100DE5BE4 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D329866A6100DE5BE4 /* Rating.swift */; };
+		347663E329866A6100DE5BE4 /* DownsizedSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D429866A6100DE5BE4 /* DownsizedSmall.swift */; };
+		347663E429866A6100DE5BE4 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D529866A6100DE5BE4 /* Welcome.swift */; };
+		347663E529866A6100DE5BE4 /* The480_WStill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D629866A6100DE5BE4 /* The480_WStill.swift */; };
+		347663E629866A6100DE5BE4 /* Looping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D729866A6100DE5BE4 /* Looping.swift */; };
 		348FA8A129854612001FE679 /* GiphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8A029854612001FE679 /* GiphyApp.swift */; };
 		348FA8A529854613001FE679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A429854613001FE679 /* Assets.xcassets */; };
 		348FA8A829854613001FE679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A729854613001FE679 /* Preview Assets.xcassets */; };
@@ -19,7 +35,6 @@
 		348FA8CB2985482E001FE679 /* GiphyScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8CA2985482E001FE679 /* GiphyScreenViewModel.swift */; };
 		348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8CF298549A5001FE679 /* GiphyInfo.swift */; };
 		348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8D1298549C6001FE679 /* GiphyAPI.swift */; };
-		348FA8D629854A41001FE679 /* GiphyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8D529854A41001FE679 /* GiphyData.swift */; };
 		348FA8D929854AC6001FE679 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8D829854AC6001FE679 /* Kingfisher */; };
 		348FA8DC29854ADE001FE679 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 348FA8DB29854ADE001FE679 /* Alamofire */; };
 		348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8E329854BF6001FE679 /* View+FirstAppear.swift */; };
@@ -37,6 +52,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		347663C72986689100DE5BE4 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		347663C929866A6000DE5BE4 /* Onclick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Onclick.swift; sourceTree = "<group>"; };
+		347663CA29866A6000DE5BE4 /* Analytics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analytics.swift; sourceTree = "<group>"; };
+		347663CB29866A6000DE5BE4 /* GiphyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiphyItem.swift; sourceTree = "<group>"; };
+		347663CC29866A6000DE5BE4 /* Meta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
+		347663CD29866A6100DE5BE4 /* TypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		347663CE29866A6100DE5BE4 /* FixedHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedHeight.swift; sourceTree = "<group>"; };
+		347663CF29866A6100DE5BE4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		347663D029866A6100DE5BE4 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		347663D129866A6100DE5BE4 /* JSONSchemaSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONSchemaSupport.swift; sourceTree = "<group>"; };
+		347663D229866A6100DE5BE4 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		347663D329866A6100DE5BE4 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		347663D429866A6100DE5BE4 /* DownsizedSmall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownsizedSmall.swift; sourceTree = "<group>"; };
+		347663D529866A6100DE5BE4 /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
+		347663D629866A6100DE5BE4 /* The480_WStill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The480_WStill.swift; sourceTree = "<group>"; };
+		347663D729866A6100DE5BE4 /* Looping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Looping.swift; sourceTree = "<group>"; };
 		348FA89D29854612001FE679 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348FA8A029854612001FE679 /* GiphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyApp.swift; sourceTree = "<group>"; };
 		348FA8A429854613001FE679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,7 +81,6 @@
 		348FA8CA2985482E001FE679 /* GiphyScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyScreenViewModel.swift; sourceTree = "<group>"; };
 		348FA8CF298549A5001FE679 /* GiphyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyInfo.swift; sourceTree = "<group>"; };
 		348FA8D1298549C6001FE679 /* GiphyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyAPI.swift; sourceTree = "<group>"; };
-		348FA8D529854A41001FE679 /* GiphyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyData.swift; sourceTree = "<group>"; };
 		348FA8E329854BF6001FE679 /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
 		348FA8E829854CB7001FE679 /* OffsettableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsettableScrollView.swift; sourceTree = "<group>"; };
 		348FA8EB29854CF5001FE679 /* OffsetPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPreferenceKey.swift; sourceTree = "<group>"; };
@@ -78,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		347663C62986688800DE5BE4 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				347663C72986689100DE5BE4 /* Array.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
 		348FA89429854612001FE679 = {
 			isa = PBXGroup;
 			children = (
@@ -256,7 +294,21 @@
 		348FA8D429854A3A001FE679 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				348FA8D529854A41001FE679 /* GiphyData.swift */,
+				347663CA29866A6000DE5BE4 /* Analytics.swift */,
+				347663CB29866A6000DE5BE4 /* GiphyItem.swift */,
+				347663D429866A6100DE5BE4 /* DownsizedSmall.swift */,
+				347663CE29866A6100DE5BE4 /* FixedHeight.swift */,
+				347663D029866A6100DE5BE4 /* Images.swift */,
+				347663D129866A6100DE5BE4 /* JSONSchemaSupport.swift */,
+				347663D729866A6100DE5BE4 /* Looping.swift */,
+				347663CC29866A6000DE5BE4 /* Meta.swift */,
+				347663C929866A6000DE5BE4 /* Onclick.swift */,
+				347663D229866A6100DE5BE4 /* Pagination.swift */,
+				347663D329866A6100DE5BE4 /* Rating.swift */,
+				347663D629866A6100DE5BE4 /* The480_WStill.swift */,
+				347663CD29866A6100DE5BE4 /* TypeEnum.swift */,
+				347663CF29866A6100DE5BE4 /* User.swift */,
+				347663D529866A6100DE5BE4 /* Welcome.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +316,7 @@
 		348FA8E029854BD6001FE679 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				347663C62986688800DE5BE4 /* Foundation */,
 				348FA8E129854BDB001FE679 /* SwiftUI */,
 			);
 			path = Extensions;
@@ -422,25 +475,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				348FA8C5298547CC001FE679 /* GiphyCoordinator.swift in Sources */,
+				347663DD29866A6100DE5BE4 /* FixedHeight.swift in Sources */,
 				348FA8C029854775001FE679 /* Coordinator.swift in Sources */,
+				347663D929866A6100DE5BE4 /* Analytics.swift in Sources */,
 				348FA8E929854CB7001FE679 /* OffsettableScrollView.swift in Sources */,
+				347663E329866A6100DE5BE4 /* DownsizedSmall.swift in Sources */,
+				347663E429866A6100DE5BE4 /* Welcome.swift in Sources */,
+				347663E029866A6100DE5BE4 /* JSONSchemaSupport.swift in Sources */,
 				348FA8CB2985482E001FE679 /* GiphyScreenViewModel.swift in Sources */,
+				347663E629866A6100DE5BE4 /* Looping.swift in Sources */,
 				348FA8F529854EA1001FE679 /* InvisiblePreferenceKey.swift in Sources */,
+				347663DF29866A6100DE5BE4 /* Images.swift in Sources */,
 				348FA8C8298547EC001FE679 /* GiphyScreenView.swift in Sources */,
+				347663DE29866A6100DE5BE4 /* User.swift in Sources */,
+				347663C82986689100DE5BE4 /* Array.swift in Sources */,
 				348FA8F129854E0B001FE679 /* View+VisibleAndInvisible.swift in Sources */,
 				348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */,
+				347663DB29866A6100DE5BE4 /* Meta.swift in Sources */,
 				348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */,
 				34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */,
 				348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */,
 				34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */,
+				347663E529866A6100DE5BE4 /* The480_WStill.swift in Sources */,
 				348FA8C3298547B7001FE679 /* GiphyRoute.swift in Sources */,
 				348FA8F829855E74001FE679 /* Color.swift in Sources */,
+				347663E129866A6100DE5BE4 /* Pagination.swift in Sources */,
+				347663DC29866A6100DE5BE4 /* TypeEnum.swift in Sources */,
 				348FA8EF29854DCC001FE679 /* GiphyItemRow.swift in Sources */,
-				348FA8D629854A41001FE679 /* GiphyData.swift in Sources */,
 				348FA8B7298546D7001FE679 /* AppScreenView.swift in Sources */,
 				348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */,
+				347663DA29866A6100DE5BE4 /* GiphyItem.swift in Sources */,
+				347663E229866A6100DE5BE4 /* Rating.swift in Sources */,
 				34C2E3652985A79D007F917C /* PinterestGrid.swift in Sources */,
 				348FA8A129854612001FE679 /* GiphyApp.swift in Sources */,
+				347663D829866A6100DE5BE4 /* Onclick.swift in Sources */,
 				348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */,
 				348FA8B929854734001FE679 /* AppNavigationStack.swift in Sources */,
 			);
