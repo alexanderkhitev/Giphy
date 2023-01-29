@@ -1,5 +1,5 @@
 //
-//  WaterfallGrid.swift
+//  GiphyWaterfallGrid.swift
 //  Giphy
 //
 //  Created by Alexander Khitev on 1/28/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WaterfallGrid: View {
+struct GiphyWaterfallGrid: View {
 
     @ObservedObject var viewModel: GiphyScreenViewModel
 

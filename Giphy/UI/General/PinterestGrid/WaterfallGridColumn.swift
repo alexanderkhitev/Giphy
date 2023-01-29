@@ -12,3 +12,9 @@ class WaterfallGridColumn: ObservableObject, Identifiable {
     @Published var gridItems = [GiphyItem]()
     var columnHeight: CGFloat = 0
 }
+
+extension WaterfallGridColumn: Equatable {
+    static func == (lhs: WaterfallGridColumn, rhs: WaterfallGridColumn) -> Bool {
+        lhs.id == rhs.id
+    }
+}

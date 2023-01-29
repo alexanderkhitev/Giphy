@@ -39,7 +39,7 @@ struct GiphyScreenView: View {
     @ViewBuilder
     private var grid: some View {
         let spacing: CGFloat = 8
-        WaterfallGrid(viewModel: viewModel, spacing: spacing)
+        GiphyWaterfallGrid(viewModel: viewModel, spacing: spacing)
     }
 
 }

@@ -49,7 +49,7 @@
 		348FA8F829855E74001FE679 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8F729855E74001FE679 /* Color.swift */; };
 		34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E340298560B0007F917C /* SizePreferenceKey.swift */; };
 		34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E342298560D2007F917C /* View+ReadSize.swift */; };
-		34C2E3652985A79D007F917C /* WaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E3642985A79D007F917C /* WaterfallGrid.swift */; };
+		34C2E3652985A79D007F917C /* GiphyWaterfallGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E3642985A79D007F917C /* GiphyWaterfallGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +94,7 @@
 		348FA8F729855E74001FE679 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		34C2E340298560B0007F917C /* SizePreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizePreferenceKey.swift; sourceTree = "<group>"; };
 		34C2E342298560D2007F917C /* View+ReadSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ReadSize.swift"; sourceTree = "<group>"; };
-		34C2E3642985A79D007F917C /* WaterfallGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallGrid.swift; sourceTree = "<group>"; };
+		34C2E3642985A79D007F917C /* GiphyWaterfallGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyWaterfallGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,7 +391,7 @@
 		34C2E3632985A791007F917C /* PinterestGrid */ = {
 			isa = PBXGroup;
 			children = (
-				34C2E3642985A79D007F917C /* WaterfallGrid.swift */,
+				34C2E3642985A79D007F917C /* GiphyWaterfallGrid.swift */,
 				347663E729867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift */,
 				347663E929867DAC00DE5BE4 /* WaterfallGridColumn.swift */,
 			);
@@ -510,7 +510,7 @@
 				348FA8E429854BF6001FE679 /* View+FirstAppear.swift in Sources */,
 				347663DA29866A6100DE5BE4 /* GiphyItem.swift in Sources */,
 				347663E229866A6100DE5BE4 /* Rating.swift in Sources */,
-				34C2E3652985A79D007F917C /* WaterfallGrid.swift in Sources */,
+				34C2E3652985A79D007F917C /* GiphyWaterfallGrid.swift in Sources */,
 				348FA8A129854612001FE679 /* GiphyApp.swift in Sources */,
 				347663D829866A6100DE5BE4 /* Onclick.swift in Sources */,
 				348FA8D0298549A5001FE679 /* GiphyInfo.swift in Sources */,
