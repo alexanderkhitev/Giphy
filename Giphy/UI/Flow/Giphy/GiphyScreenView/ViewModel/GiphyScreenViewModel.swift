@@ -62,6 +62,8 @@ extension GiphyScreenViewModel {
         }
     }
 
+    // TODO: - alex
+
     private func createColumns(for gridItems: [GiphyItem]) {
         var columns = [GiphyWaterfallGridColumn]()
         for _ in 0..<uiData.columnsNumber {
@@ -105,5 +107,13 @@ extension GiphyScreenViewModel {
 
         let rowSize = CGSize(width: rowWidth, height: rowHeight)
         return rowSize
+    }
+}
+
+// MARK: - Buttons
+
+extension GiphyScreenViewModel {
+    @MainActor func didSelect(_ giphyItem: GiphyItem) {
+        coordinator?.push(.showGiphyItem(giphyItem))
     }
 }

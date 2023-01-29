@@ -26,11 +26,14 @@ class GiphyItem: Codable, PrinterestGridItemProtocol {
     var analyticsResponsePayload: String
     var analytics: Analytics
 
-    // TODO: - Alex
+    // MARK: - Internal data
     var rowSize: CGSize = .zero
     let rowID = UUID()
     var preview: The480_WStill {
         images.downsized
+    }
+    var detailed: The480_WStill {
+        images.downsizedLarge
     }
 
     enum CodingKeys: String, CodingKey {
@@ -72,5 +75,17 @@ class GiphyItem: Codable, PrinterestGridItemProtocol {
         self.user = user
         self.analyticsResponsePayload = analyticsResponsePayload
         self.analytics = analytics
+    }
+}
+
+extension GiphyItem: Equatable {
+    static func == (lhs: GiphyItem, rhs: GiphyItem) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension GiphyItem: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

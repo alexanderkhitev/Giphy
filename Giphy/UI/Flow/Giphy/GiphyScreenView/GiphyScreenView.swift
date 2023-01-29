@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GiphyScreenView: View {
     @StateObject var viewModel: GiphyScreenViewModel
-    @State private var contentGeoProxy: GeometryProxy?
 
     var body: some View {
         content
@@ -31,7 +30,6 @@ struct GiphyScreenView: View {
             }
             .onAppear {
                 viewModel.mainScreenGeoProxy = geoProxy
-                contentGeoProxy = geoProxy
             }
         }
     }

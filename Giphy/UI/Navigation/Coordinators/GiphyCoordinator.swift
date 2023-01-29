@@ -21,8 +21,12 @@ class GiphyCoordinator: Coordinator {
         path.append(route)
     }
 
+    @ViewBuilder
     func navigationDestination(for route: GiphyRoute) -> some View {
-        EmptyView()
+        switch route {
+        case .showGiphyItem(let giphyItem):
+            GiphyDetailedScreenView(viewModel: .init(giphyItem: giphyItem, coordinator: self))
+        }
     }
 
 }

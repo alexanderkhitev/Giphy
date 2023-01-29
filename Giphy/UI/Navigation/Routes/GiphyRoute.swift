@@ -8,5 +8,5 @@
 import Foundation
 
 enum GiphyRoute: Hashable {
-    case detailedGif
+    case showGiphyItem(_ giphyItem: GiphyItem)
 }

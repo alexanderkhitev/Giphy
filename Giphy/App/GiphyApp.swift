@@ -23,7 +23,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions:
                      [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
-        // TODO: - Alex
         KingfisherManager.shared.cache.memoryStorage.config.totalCostLimit = 200 * 1024 * 1024
       
 
