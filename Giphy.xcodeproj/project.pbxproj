@@ -32,6 +32,7 @@
 		347663FE2986AB7C00DE5BE4 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663FD2986AB7C00DE5BE4 /* Mock.swift */; };
 		347664002986ABDB00DE5BE4 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663FF2986ABDB00DE5BE4 /* JSONDecoder.swift */; };
 		347664032986AD8700DE5BE4 /* CopySystemwideManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347664022986AD8700DE5BE4 /* CopySystemwideManager.swift */; };
+		347664052986B08F00DE5BE4 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347664042986B08F00DE5BE4 /* PhotoManager.swift */; };
 		348FA8A129854612001FE679 /* GiphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8A029854612001FE679 /* GiphyApp.swift */; };
 		348FA8A529854613001FE679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A429854613001FE679 /* Assets.xcassets */; };
 		348FA8A829854613001FE679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A729854613001FE679 /* Preview Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		347663FD2986AB7C00DE5BE4 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
 		347663FF2986ABDB00DE5BE4 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		347664022986AD8700DE5BE4 /* CopySystemwideManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopySystemwideManager.swift; sourceTree = "<group>"; };
+		347664042986B08F00DE5BE4 /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		348FA89D29854612001FE679 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348FA8A029854612001FE679 /* GiphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyApp.swift; sourceTree = "<group>"; };
 		348FA8A429854613001FE679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				347664022986AD8700DE5BE4 /* CopySystemwideManager.swift */,
+				347664042986B08F00DE5BE4 /* PhotoManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				347664002986ABDB00DE5BE4 /* JSONDecoder.swift in Sources */,
 				348FA8F329854E4F001FE679 /* VisiblePreferenceKey.swift in Sources */,
 				347663DB29866A6100DE5BE4 /* Meta.swift in Sources */,
+				347664052986B08F00DE5BE4 /* PhotoManager.swift in Sources */,
 				348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */,
 				34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */,
 				347663F62986A94100DE5BE4 /* GiphyDetailedScreenViewModel.swift in Sources */,
@@ -756,12 +760,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Giphy/Giphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Giphy/Preview Content\"";
 				DEVELOPMENT_TEAM = 35L77VM7C3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please give access to Photos app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -789,12 +795,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Giphy/Giphy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Giphy/Preview Content\"";
 				DEVELOPMENT_TEAM = 35L77VM7C3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Please give access to Photos app";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

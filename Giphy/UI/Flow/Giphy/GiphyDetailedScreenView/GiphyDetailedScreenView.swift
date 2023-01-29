@@ -18,6 +18,9 @@ struct GiphyDetailedScreenView: View {
                     Text(progress.localizedDescription)
                         .font(.title2)
                 })
+                .onProgress({ receivedSize, totalSize in
+                    viewModel.observeProgress(receivedSize, totalSize: totalSize)
+                })
                 .scaledToFit()
             buttons
         }
@@ -29,8 +32,9 @@ struct GiphyDetailedScreenView: View {
                 viewModel.copyURL()
             }
             Button("Save giphy") {
-
+                viewModel.saveToPhotos()
             }
+            .disabled(viewModel.saveButtonDisabled)
         }
         .buttonStyle(.bordered)
         .font(.title)
