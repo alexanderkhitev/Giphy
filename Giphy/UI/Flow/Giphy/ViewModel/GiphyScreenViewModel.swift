@@ -32,10 +32,7 @@ extension GiphyScreenViewModel {
         Task {
             do {
                 let giphyItems = try await giphyAPI.gifs().data
-                giphyItems.forEach({ $0.rowSize = calculateRowSize($0, spacing: 8) })
-
-                columns = createColumns(for: giphyItems)
-
+                createColumns(for: giphyItems)
                 waitPaginationData = false
             } catch {
                 // TODO: - Show error
@@ -53,7 +50,6 @@ extension GiphyScreenViewModel {
             do {
                 let offset = columns.compactMap({ $0.gridItems.count }).reduce(.zero, +)
                 let newGiphyItems = try await giphyAPI.gifs(offset: offset).data
-                newGiphyItems.forEach({ $0.rowSize = calculateRowSize($0, spacing: 8) })
 
                 updateColumns(with: newGiphyItems)
 
@@ -65,34 +61,30 @@ extension GiphyScreenViewModel {
         }
     }
 
-    private func createColumns(for gridItems: [GiphyItem], numOfColumns: Int = 2) -> [WaterfallGridColumn] {
+    private func createColumns(for gridItems: [GiphyItem], numOfColumns: Int = 2) {
         var columns = [WaterfallGridColumn]()
-
         for _ in 0..<numOfColumns {
             columns.append(WaterfallGridColumn())
         }
-
-        // this stores the current height of each column, sot that we can find out which one is the smallest
-        var columnsHeight = Array<CGFloat>(repeating: 0, count: numOfColumns)
-
         for gridItem in gridItems {
-            let smallestHeight = columnsHeight.min() ?? 0
-            let smallestColumnIndex = columnsHeight.firstIndex(of: smallestHeight) ?? 0
+            gridItem.rowSize = calculateRowSize(gridItem, spacing: 8)
 
-            columns[smallestColumnIndex].gridItems.append(gridItem)
-            columns[smallestColumnIndex].columnHeihgt += gridItem.rowSize.height
-            columnsHeight[smallestColumnIndex] += gridItem.rowSize.height
+            let smallestColumn = columns.min(by: { $0.columnHeight < $1.columnHeight }) ?? columns[0]
+            smallestColumn.gridItems.append(gridItem)
+            smallestColumn.columnHeight += gridItem.rowSize.height
         }
-        return columns
+
+        self.columns = columns
     }
 
     private func updateColumns(with gridItems: [GiphyItem]) {
         for gridItem in gridItems {
-            let smallestColumn = columns.min(by: { $0.columnHeihgt < $1.columnHeihgt }) ?? columns[0]
-            smallestColumn.gridItems.append(gridItem)
-            smallestColumn.columnHeihgt += gridItem.rowSize.height
-        }
+            gridItem.rowSize = calculateRowSize(gridItem, spacing: 8)
 
+            let smallestColumn = columns.min(by: { $0.columnHeight < $1.columnHeight }) ?? columns[0]
+            smallestColumn.gridItems.append(gridItem)
+            smallestColumn.columnHeight += gridItem.rowSize.height
+        }
         objectWillChange.send()
     }
 }
