@@ -11,9 +11,8 @@ import Foundation
 class GiphyAPI {
 
     func gifs(offset: Int = 0) async throws -> GiphyData {
-        // TODO: - Alex add custom error
         guard let url = URL(string: "https://api.giphy.com/v1/gifs/trending") else {
-            throw NSError()
+            throw NSError(domain: "GiphyAPIDomain", code: 1001)
         }
         debugPrint("[a]: offset \(offset)")
         let parameters: Parameters = ["api_key": GiphyInfo.Key.appKey,

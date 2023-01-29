@@ -53,6 +53,8 @@ extension GiphyScreenViewModel {
 
                 updateColumns(with: newGiphyItems)
 
+                debugPrint("height!! first column \(columns[0].columnHeight), second \(columns[1].columnHeight)")
+
                 waitPaginationData = false
             } catch {
                 // TODO: - Show error
@@ -71,6 +73,8 @@ extension GiphyScreenViewModel {
 
             let smallestColumn = columns.min(by: { $0.columnHeight < $1.columnHeight }) ?? columns[0]
             smallestColumn.gridItems.append(gridItem)
+            debugPrint("[a]: columns height \(columns.compactMap({ $0.columnHeight }))")
+            debugPrint("[a]: smallestColumn \(smallestColumn.columnHeight)")
             smallestColumn.columnHeight += gridItem.rowSize.height
         }
 
@@ -80,8 +84,10 @@ extension GiphyScreenViewModel {
     private func updateColumns(with gridItems: [GiphyItem]) {
         for gridItem in gridItems {
             gridItem.rowSize = calculateRowSize(gridItem, spacing: 8)
-
             let smallestColumn = columns.min(by: { $0.columnHeight < $1.columnHeight }) ?? columns[0]
+
+            debugPrint("[a]: columns height \(columns.compactMap({ $0.columnHeight }))")
+            debugPrint("[a]: smallestColumn \(smallestColumn.columnHeight)")
             smallestColumn.gridItems.append(gridItem)
             smallestColumn.columnHeight += gridItem.rowSize.height
         }

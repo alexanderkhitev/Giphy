@@ -12,7 +12,6 @@ struct GiphyItemRow: View {
 
     let giphyItem: GiphyItem
     let placeholder: Color
-    @State private var isVisible = false
 
     init(giphyItem: GiphyItem) {
         self.giphyItem = giphyItem
@@ -21,12 +20,6 @@ struct GiphyItemRow: View {
 
     var body: some View {
         content
-            .onBecomingVisible {
-                isVisible = true
-            }
-            .onBecomingInvisible {
-                isVisible = false
-            }
     }
 
     @ViewBuilder
@@ -40,6 +33,7 @@ struct GiphyItemRow: View {
             .placeholder { _ in
                 placeholder
             }
+            .cancelOnDisappear(true)
     }
 
 }
