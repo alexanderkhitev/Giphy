@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct WaterfallGridColumn: Identifiable {
+class WaterfallGridColumn: ObservableObject, Identifiable {
     let id = UUID()
     var gridItems = [GiphyItem]()
     var columnHeihgt: CGFloat = 0
