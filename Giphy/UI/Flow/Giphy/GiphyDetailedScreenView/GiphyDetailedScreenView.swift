@@ -14,7 +14,10 @@ struct GiphyDetailedScreenView: View {
     var body: some View {
         VStack(spacing: 50) {
             KFAnimatedImage(URL(string: viewModel.giphyItem.detailed.url))
-                
+                .placeholder({ progress in
+                    Text(progress.localizedDescription)
+                        .font(.title2)
+                })
                 .scaledToFit()
             buttons
         }
