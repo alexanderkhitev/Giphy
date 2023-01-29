@@ -16,3 +16,10 @@ class GiphyDetailedScreenViewModel: ObservableObject {
         self.coordinator = coordinator
     }
 }
+
+extension GiphyDetailedScreenViewModel {
+    func copyURL() {
+        guard let url = URL(string: giphyItem.detailed.url) else { return }
+        CopySystemwideManager.copy(url)
+    }
+}

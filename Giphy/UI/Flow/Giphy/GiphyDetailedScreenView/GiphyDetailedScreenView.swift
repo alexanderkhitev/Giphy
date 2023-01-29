@@ -5,13 +5,32 @@
 //  Created by Alexander Khitev on 1/29/23.
 //
 
+import Kingfisher
 import SwiftUI
 
 struct GiphyDetailedScreenView: View {
     @StateObject var viewModel: GiphyDetailedScreenViewModel
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 50) {
+            KFAnimatedImage(URL(string: viewModel.giphyItem.detailed.url))
+                
+                .scaledToFit()
+            buttons
+        }
+    }
+
+    private var buttons: some View {
+        VStack(spacing: 20) {
+            Button("Copy giphy url") {
+                viewModel.copyURL()
+            }
+            Button("Save giphy") {
+
+            }
+        }
+        .buttonStyle(.bordered)
+        .font(.title)
     }
 }
 
