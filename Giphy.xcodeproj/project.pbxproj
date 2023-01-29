@@ -23,6 +23,8 @@
 		347663E429866A6100DE5BE4 /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D529866A6100DE5BE4 /* Welcome.swift */; };
 		347663E529866A6100DE5BE4 /* The480_WStill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D629866A6100DE5BE4 /* The480_WStill.swift */; };
 		347663E629866A6100DE5BE4 /* Looping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663D729866A6100DE5BE4 /* Looping.swift */; };
+		347663E829867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663E729867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift */; };
+		347663EA29867DAC00DE5BE4 /* WaterfallGridColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347663E929867DAC00DE5BE4 /* WaterfallGridColumn.swift */; };
 		348FA8A129854612001FE679 /* GiphyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA8A029854612001FE679 /* GiphyApp.swift */; };
 		348FA8A529854613001FE679 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A429854613001FE679 /* Assets.xcassets */; };
 		348FA8A829854613001FE679 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348FA8A729854613001FE679 /* Preview Assets.xcassets */; };
@@ -67,6 +69,8 @@
 		347663D529866A6100DE5BE4 /* Welcome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		347663D629866A6100DE5BE4 /* The480_WStill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The480_WStill.swift; sourceTree = "<group>"; };
 		347663D729866A6100DE5BE4 /* Looping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Looping.swift; sourceTree = "<group>"; };
+		347663E729867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterestGridItemProtocol.swift; sourceTree = "<group>"; };
+		347663E929867DAC00DE5BE4 /* WaterfallGridColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterfallGridColumn.swift; sourceTree = "<group>"; };
 		348FA89D29854612001FE679 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		348FA8A029854612001FE679 /* GiphyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyApp.swift; sourceTree = "<group>"; };
 		348FA8A429854613001FE679 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -388,6 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				34C2E3642985A79D007F917C /* WaterfallGrid.swift */,
+				347663E729867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift */,
+				347663E929867DAC00DE5BE4 /* WaterfallGridColumn.swift */,
 			);
 			path = PinterestGrid;
 			sourceTree = "<group>";
@@ -490,8 +496,10 @@
 				347663DB29866A6100DE5BE4 /* Meta.swift in Sources */,
 				348FA8EC29854CF5001FE679 /* OffsetPreferenceKey.swift in Sources */,
 				34C2E341298560B0007F917C /* SizePreferenceKey.swift in Sources */,
+				347663EA29867DAC00DE5BE4 /* WaterfallGridColumn.swift in Sources */,
 				348FA8D2298549C6001FE679 /* GiphyAPI.swift in Sources */,
 				34C2E343298560D2007F917C /* View+ReadSize.swift in Sources */,
+				347663E829867D9B00DE5BE4 /* PrinterestGridItemProtocol.swift in Sources */,
 				347663E529866A6100DE5BE4 /* The480_WStill.swift in Sources */,
 				348FA8C3298547B7001FE679 /* GiphyRoute.swift in Sources */,
 				348FA8F829855E74001FE679 /* Color.swift in Sources */,

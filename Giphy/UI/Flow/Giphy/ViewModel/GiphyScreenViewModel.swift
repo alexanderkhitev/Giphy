@@ -23,7 +23,6 @@ class GiphyScreenViewModel: ObservableObject {
         self.coordinator = coordinator
     }
 
-
 }
 
 // MARK: - Data
